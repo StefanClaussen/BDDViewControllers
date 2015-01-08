@@ -1,10 +1,6 @@
 //
 //  Test.m
 //  BDDViewControllersDB
-//
-//  Created by Stefan Claussen on 08/01/2015.
-//  Copyright (c) 2015 One foot after the other. All rights reserved.
-//
 
 #import "ViewController.h"
 
