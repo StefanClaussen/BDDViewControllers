@@ -14,6 +14,7 @@
 		F8B47F391A5EE1D0007A0CED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8B47F371A5EE1D0007A0CED /* Main.storyboard */; };
 		F8B47F3B1A5EE1D0007A0CED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B47F3A1A5EE1D0007A0CED /* Images.xcassets */; };
 		F8B47F3E1A5EE1D0007A0CED /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B47F3C1A5EE1D0007A0CED /* LaunchScreen.xib */; };
+		F8B47F5D1A5EE96C007A0CED /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B47F5C1A5EE96C007A0CED /* Test.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		F8B47F431A5EE1D0007A0CED /* BDDViewControllersDBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BDDViewControllersDBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B47F481A5EE1D0007A0CED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8B47F541A5EE67F007A0CED /* BDDViewControllersDBTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BDDViewControllersDBTests-Prefix.pch"; sourceTree = "<group>"; };
+		F8B47F5C1A5EE96C007A0CED /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				F8B47F471A5EE1D0007A0CED /* Supporting Files */,
+				F8B47F5C1A5EE96C007A0CED /* Test.m */,
 			);
 			path = BDDViewControllersDBTests;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8B47F5D1A5EE96C007A0CED /* Test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
