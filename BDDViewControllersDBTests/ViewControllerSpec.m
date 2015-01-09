@@ -1,14 +1,8 @@
-//
 //  ViewControllerSpec.m
 //  BDDViewControllersDB
 
 #import "ViewController_Extensions.h"
 #import "LoginService.h"
-
-/*  Scratchpad
- 
- 
-*/
 
 SpecBegin(ViewController)
     describe(@"ViewController", ^{
@@ -54,14 +48,6 @@ SpecBegin(ViewController)
                 [vc loginButtonTapped:vc.loginButton];
                 
                 [mockLoginService verify];
-            });
-            
-            it(@"should move to the welcome view controller for correct username and password", ^{
-                
-            });
-            
-            it(@"should show alert for incorrect username or password", ^{
-                
             });
         });
     });
