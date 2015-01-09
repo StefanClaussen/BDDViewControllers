@@ -3,6 +3,7 @@
 //  BDDViewControllersDB
 
 #import "ViewController_Extensions.h"
+#define EXP_SHORTHAND
 
 SpecBegin(ViewController)
     describe(@"ViewController", ^{
