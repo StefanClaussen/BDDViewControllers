@@ -58,6 +58,25 @@ SpecBegin(ViewController)
                 
                 [vc loginButtonTapped:vc.loginButton];
             });
+            
+            context(@"with valid credentials", ^{
+                beforeEach(^{
+                    [[mockLoginService stub] loginWithUsername:[OCMArg any] password:[OCMArg any] completion:[OCMArg checkWithBlock:^BOOL(LoginServiceCompletionBlock obj) {
+                        obj(YES);
+                        return NO;
+                    }]];
+                });
+                
+                it(@"should present the welcome view controller", ^{
+                    id mockVC = [OCMockObject partialMockForObject:vc];
+                    [[mockVC expect] performSegueWithIdentifier:@"ShowWelcomeViewController" sender:[OCMArg any]];
+                    
+                    [vc loginButtonTapped:vc.loginButton];
+                    
+                    [mockVC verify];
+                });
+            });
+            
             context(@"with invalid credentials", ^{
                 beforeEach(^{
                     [[mockLoginService stub] loginWithUsername:[OCMArg any] password:[OCMArg any] completion:[OCMArg checkWithBlock:^BOOL(LoginServiceCompletionBlock obj) {
@@ -67,65 +86,13 @@ SpecBegin(ViewController)
                 });
                 
                  it(@"should show an alert", ^{
-                     UIAlertController *alertController = [UIAlertController new];
-                     
-                     id classMockAlertController = [OCMockObject mockForClass:[UIAlertController class]];
-                     [[[classMockAlertController stub] andReturn:alertController] alertControllerWithTitle:[OCMArg any] message:[OCMArg any] preferredStyle:UIAlertControllerStyleAlert];
-                     
-                     id mockAlertController = [OCMockObject partialMockForObject:alertController];
-                     [[mockAlertController expect] addAction:[OCMArg any]];
-                     
                      id mockVC = [OCMockObject partialMockForObject:vc];
-                     [[mockVC expect] presentViewController:alertController animated:YES completion:nil];
+                     [[mockVC expect] presentViewController:[OCMArg any] animated:YES completion:nil];
                      
                      [vc loginButtonTapped:vc.loginButton];
                      
                      [mockVC verify];
-                     //[mockAlertController verify];
                  });
-                
-                // [mockLoginService loginWithUsername:[OCMArg any] password:[OCMArg any] compl]
-//                
-//                beforeEach(^{
-//                    
-//                    
-////                    alertProvider = [OCMockObject mockForClass:[AlertViewProvider class]];
-////                    vc.alertProvider = alertProvider;
-////                    
-////                    [[mockLoginService stub] verifyUsername:[OCMArg any]
-////                                                    password:[OCMArg any]
-////                                                  completion:[OCMArg checkWithBlock:^BOOL(LoginServiceCompletionBlock block) {
-////                        block(NO);
-////                        return YES;
-////                    }]];
-//                });
-//                it(@"should show an alert", ^{
-//                    id mockAlert = [OCMockObject mockForClass:[UIAlertView class]];
-//                    [[[alertProvider expect] andReturn:mockAlert] alertViewWithTitle:[OCMArg any]
-//                                                                              message:[OCMArg any]];
-//                    [[mockAlert expect] show];
-//                    
-//                    [vc loginTapped:nil];
-//                    
-//                    [alertProvider verify];
-//                    [mockAlert verify];
-//                });
-//            });
-//            context(@"valid credentials", ^{
-//                beforeEach(^{
-//                    [[mockLoginService stub] verifyUsername:[OCMArg any]
-//                                                    password:[OCMArg any]
-//                                                  completion:[OCMArg checkWithBlock:^BOOL(LoginServiceCompletionBlock block) {
-//                        block(YES);
-//                        return YES;
-//                    }]];
-//                });
-//                
-//                it(@"should push the welcome view controller", ^{
-//                    [vc loginTapped:nil];
-//                    
-//                    expect(vc.navigationController.visibleViewController).to.beInstanceOf([WelcomeViewController class]);
-//                });
             });
         });
     });

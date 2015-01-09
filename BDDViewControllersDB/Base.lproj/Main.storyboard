@@ -55,7 +55,7 @@
                         <outlet property="loginButton" destination="f8c-4t-YaQ" id="6zm-qf-5Ij"/>
                         <outlet property="passwordTextField" destination="2Ld-UQ-r5z" id="MgX-gD-nNX"/>
                         <outlet property="usernameTextField" destination="E60-zU-fWI" id="GXU-C2-DNn"/>
-                        <segue destination="caN-2s-7Tk" kind="show" id="wnx-sz-Dcx"/>
+                        <segue destination="caN-2s-7Tk" kind="show" identifier="ShowWelcomeViewController" id="wnx-sz-Dcx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
