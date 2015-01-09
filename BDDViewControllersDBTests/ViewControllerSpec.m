@@ -1,8 +1,8 @@
 //
-//  Test.m
+//  ViewControllerSpec.m
 //  BDDViewControllersDB
 
-#import "ViewController.h"
+#import "ViewController_Extensions.h"
 
 SpecBegin(ViewController)
     describe(@"ViewController", ^{
@@ -11,8 +11,9 @@ SpecBegin(ViewController)
         
         // Will be run before each enclosed it
         beforeEach(^{
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"main" bundle:nil];
-            vc = [storyboard instantiateInitialViewController];
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UINavigationController *nc = [storyboard instantiateInitialViewController];
+            vc = (ViewController *)nc.visibleViewController;
             UIView *view = vc.view;
             expect(view).toNot.beNil();
         });
@@ -23,15 +24,16 @@ SpecBegin(ViewController)
         });
         
         it(@"should have an outlet for the username field", ^{
-            
+            expect(vc.usernameTextField).toNot.beNil();
         });
         
         it(@"should have an outlet for the password field", ^{
-            
+            expect(vc.passwordTextField).to.beNil();
         });
         
         it(@"should wire up the login button action", ^{
-            
+            NSArray *actions = [vc.loginButton actionsForTarget:vc forControlEvent:UIControlEventTouchUpInside];
+            expect(actions.firstObject).to.equal(@"loginButtonTapped:");
         });
         
         describe(@"logging in", ^{
