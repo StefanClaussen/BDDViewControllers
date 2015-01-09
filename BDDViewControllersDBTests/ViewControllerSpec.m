@@ -3,7 +3,12 @@
 //  BDDViewControllersDB
 
 #import "ViewController_Extensions.h"
-#define EXP_SHORTHAND
+#import "LoginService.h"
+
+/*  Scratchpad
+ 
+ 
+*/
 
 SpecBegin(ViewController)
     describe(@"ViewController", ^{
@@ -15,8 +20,8 @@ SpecBegin(ViewController)
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             UINavigationController *nc = [storyboard instantiateInitialViewController];
             vc = (ViewController *)nc.visibleViewController;
-            UIView *view = vc.view;
-            expect(view).toNot.beNil();
+
+            expect(vc.view).toNot.beNil();
         });
         
         it(@"should be instantiated from the storyboard", ^{
@@ -29,7 +34,7 @@ SpecBegin(ViewController)
         });
         
         it(@"should have an outlet for the password field", ^{
-            expect(vc.passwordTextField).to.beNil();
+            expect(vc.passwordTextField).toNot.beNil();
         });
         
         it(@"should wire up the login button action", ^{
@@ -40,6 +45,22 @@ SpecBegin(ViewController)
         describe(@"logging in", ^{
             // vc => login service
             it(@"should verify username & password with the login service", ^{
+                id mockLoginService = [OCMockObject mockForClass:[LoginService class]];
+                [[mockLoginService expect] loginWithUsername:@"username" password:@"password" completion:[OCMArg any]];
+                
+                vc.usernameTextField.text = @"username";
+                vc.passwordTextField.text = @"password";
+                
+                [vc loginButtonTapped:vc.loginButton];
+                
+                [mockLoginService verify];
+            });
+            
+            it(@"should move to the welcome view controller for correct username and password", ^{
+                
+            });
+            
+            it(@"should show alert for incorrect username or password", ^{
                 
             });
         });

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		ADC2AFF2411CA6B1233E2C59 /* libPods-BDDViewControllersDBTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A04184D09A5044DE647F2DFB /* libPods-BDDViewControllersDBTests.a */; };
+		F8B475D21A5FF352001A68F4 /* LoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B475D11A5FF352001A68F4 /* LoginService.m */; };
 		F8B47F301A5EE1D0007A0CED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B47F2F1A5EE1D0007A0CED /* main.m */; };
 		F8B47F331A5EE1D0007A0CED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B47F321A5EE1D0007A0CED /* AppDelegate.m */; };
 		F8B47F361A5EE1D0007A0CED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B47F351A5EE1D0007A0CED /* ViewController.m */; };
@@ -31,6 +32,8 @@
 		8F26FA455F3EE78DB17F729E /* Pods-BDDViewControllersDBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BDDViewControllersDBTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BDDViewControllersDBTests/Pods-BDDViewControllersDBTests.release.xcconfig"; sourceTree = "<group>"; };
 		A04184D09A5044DE647F2DFB /* libPods-BDDViewControllersDBTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BDDViewControllersDBTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC95C3FD17399AA8C1145C80 /* Pods-BDDViewControllersDBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BDDViewControllersDBTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BDDViewControllersDBTests/Pods-BDDViewControllersDBTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F8B475D01A5FF352001A68F4 /* LoginService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginService.h; sourceTree = "<group>"; };
+		F8B475D11A5FF352001A68F4 /* LoginService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginService.m; sourceTree = "<group>"; };
 		F8B47F2A1A5EE1D0007A0CED /* BDDViewControllersDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BDDViewControllersDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B47F2E1A5EE1D0007A0CED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8B47F2F1A5EE1D0007A0CED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -115,6 +118,8 @@
 				F8B47F3A1A5EE1D0007A0CED /* Images.xcassets */,
 				F8B47F3C1A5EE1D0007A0CED /* LaunchScreen.xib */,
 				F8B47F2D1A5EE1D0007A0CED /* Supporting Files */,
+				F8B475D01A5FF352001A68F4 /* LoginService.h */,
+				F8B475D11A5FF352001A68F4 /* LoginService.m */,
 			);
 			path = BDDViewControllersDB;
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 				F8B47F361A5EE1D0007A0CED /* ViewController.m in Sources */,
 				F8B47F331A5EE1D0007A0CED /* AppDelegate.m in Sources */,
 				F8B47F301A5EE1D0007A0CED /* main.m in Sources */,
+				F8B475D21A5FF352001A68F4 /* LoginService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
